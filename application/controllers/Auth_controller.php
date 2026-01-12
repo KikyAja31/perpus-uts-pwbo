@@ -20,7 +20,7 @@ class Auth_controller extends CI_Controller {
         // Cari di database
         $user = $this->db->get_where('user', ['username' => $user_input])->row();
 
-        // Cek apakah user ada DAN password cocok (Plain Text)
+        // Cek apakah user ada DAN password cocok
         if ($user && $pass_input == $user->password) {
             $session_data = [
                 'id_user'   => $user->id,
